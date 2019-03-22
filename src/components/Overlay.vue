@@ -4,13 +4,11 @@
       <a class="navbar-logo">P2Pong</a>
       <a class="navbar-link">
         <font-awesome-icon
-          class="navbar-icon"
           icon="wrench"/>
         <span>Settings</span>
       </a>
       <a class="navbar-link">
         <font-awesome-icon
-          class="navbar-icon"
           :icon="[$root.ipfs ? 'fas' : 'far', 'circle']"/>
         <span>Status</span>
       </a>
@@ -93,14 +91,14 @@ export default {
   .navbar a {
     display: block;
     text-align: center;
-    padding: 10px 10px;
+    padding: 10px 10px 8px 10px;
     border-bottom: 2px solid transparent;
     text-decoration: none;
     font-size: 17px;
   }
 
-  .navbar-icon {
-    padding-right: 5px
+  .navbar a span {
+    padding-left: 8px
   }
 
   @media (max-width:500px) {
