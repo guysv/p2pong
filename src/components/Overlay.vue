@@ -14,6 +14,11 @@
           :icon="[$root.ipfs ? 'fas' : 'far', 'circle']"/>
         <span>Status</span>
       </a>
+      <a>
+        <font-awesome-icon
+          icon="home"/>
+        <span>Host</span>
+      </a>
     </div>
     <div v-if="!($root.ipfs)">
       <div id="loading-msg">Starting IPFS node...</div>
@@ -50,7 +55,6 @@ export default {
     })
 
     ipfs.on('ready', () => {
-      console.log('IPFS Node initialized successfuly')
       this.$root.ipfs = ipfs
     })
   }
@@ -100,7 +104,7 @@ export default {
     padding-left: 8px
   }
 
-  @media (max-width:500px) {
+  @media (max-width:560px) {
     .navbar a:not(#logo) span {
       display: none;
     }
