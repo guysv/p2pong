@@ -104,5 +104,5 @@ export default {
     .navbar a:not(#logo) span {
       display: none;
     }
-  }  
+  }
 </style>
