@@ -1,13 +1,15 @@
 <template>
   <div>
     <div class="navbar">
-      <a class="navbar-logo">P2Pong</a>
-      <a class="navbar-link">
+      <a id="logo">
+        <span>P2Pong</span>
+      </a>
+      <a>
         <font-awesome-icon
           icon="wrench"/>
         <span>Settings</span>
       </a>
-      <a class="navbar-link">
+      <a>
         <font-awesome-icon
           :icon="[$root.ipfs ? 'fas' : 'far', 'circle']"/>
         <span>Status</span>
@@ -76,19 +78,12 @@ export default {
     border-bottom: 4px solid;
   }
 
-  .navbar-logo {
+  #logo {
     float: left;
   }
 
-  .navbar-link {
-    float: right;
-  }
-
-  .navbar-link:hover {
-    border-bottom: 2px solid;
-  }
-
   .navbar a {
+    float: right;
     display: block;
     text-align: center;
     padding: 10px 10px 8px 10px;
@@ -97,12 +92,16 @@ export default {
     font-size: 17px;
   }
 
+  .navbar a:hover {
+    border-bottom: 2px solid;
+  }
+
   .navbar a span {
     padding-left: 8px
   }
 
   @media (max-width:500px) {
-    .navbar .navbar-link span {
+    .navbar a:not(#logo) span {
       display: none;
     }
   }  
