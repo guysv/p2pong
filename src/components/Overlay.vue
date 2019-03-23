@@ -20,7 +20,7 @@
       </a>
       <router-link to="/host">
         <font-awesome-icon
-          icon="home"/>
+          icon="play"/>
         <span>Host</span>
       </router-link>
     </div>
