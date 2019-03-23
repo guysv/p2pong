@@ -51,20 +51,23 @@ export default {
   table {
     width: 100%;
     border-collapse: collapse;
-    text-align: left
+    text-align: left;
   }
 
   th {
-    padding: 6px 0px;
     border-bottom: 2px solid;
-    border-left: 10px solid transparent;
   }
 
-  td {
-    padding: 6px 0px;
+  td, th {
+    padding: 6px 10px;
+  }
+
+  tr {
+    border-left: 2px solid transparent;
   }
 
   tbody tr:hover {
     background: rgba(255, 255, 255, 0.1)
+    /* border-left: 2px solid */
   }
 </style>
