@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <Overlay><router-view/></Overlay>
+    <Overlay />
   </div>
 </template>
 
 <script>
-import Overlay from '@/components/Overlay.vue'
+import Overlay from '@/components/Overlay'
 
 export default {
   name: 'app',

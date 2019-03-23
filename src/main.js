@@ -5,8 +5,8 @@ import { faCircle as fasCircle } from '@fortawesome/free-solid-svg-icons/faCircl
 import { faCircle as farCircle } from '@fortawesome/free-regular-svg-icons/faCircle'
 import { faHome as fasHome } from '@fortawesome/free-solid-svg-icons/faHome'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import App from './App.vue'
-import router from './router'
+import App from '@/App'
+import router from '@/router'
 
 library.add(fasWrench, fasCircle, farCircle, fasHome)
 

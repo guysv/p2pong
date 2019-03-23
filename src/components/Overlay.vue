@@ -14,26 +14,31 @@
           :icon="[$root.ipfs ? 'fas' : 'far', 'circle']"/>
         <span>Status</span>
       </a>
-      <a>
+      <router-link to="/host">
         <font-awesome-icon
           icon="home"/>
         <span>Host</span>
-      </a>
+      </router-link>
     </div>
     <div v-if="!($root.ipfs)">
       <div id="loading-msg">Starting IPFS node...</div>
     </div>
     <div v-else>
-      <slot/>
+      <LobbyListener ref="lobbyListener" />
+      <router-view />
     </div>
     </div>
 </template>
 
 <script>
 import IPFS from 'ipfs'
+import LobbyListener from '@/components/LobbyListener'
 
 export default {
   name: 'overlay',
+  components: {
+    LobbyListener
+  },
   mounted () {
     if (this.$root.ipfs) {
       return
@@ -42,7 +47,7 @@ export default {
       config: {
         Addresses: {
           Swarm: [
-            // '/dns4/ws-star.discovery.libp2p.io/tcp/443/wss/p2p-websocket-star'
+            '/dns4/ws-star.discovery.libp2p.io/tcp/443/wss/p2p-websocket-star'
           ]
         }
       },
@@ -94,6 +99,8 @@ export default {
     border-bottom: 2px solid transparent;
     text-decoration: none;
     font-size: 17px;
+    color: inherit;
+    text-decoration: inherit;
   }
 
   .navbar a:hover {
