@@ -94,6 +94,8 @@ export default {
     top: 0;
     width: 100%;
     border-bottom: 4px solid;
+    /* TODO: understand how to reuse colors */
+    background-color: #091914;
   }
 
   #logo {
