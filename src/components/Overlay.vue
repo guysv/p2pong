@@ -4,7 +4,7 @@
       <a id="logo">
         <span>P2Pong</span>
       </a>
-      <a v-on:click.stop="enterFullscreen" id="fullscreen" href="/#/.">
+      <a v-on:click.prevent="enterFullscreen" id="fullscreen" href=".">
         <font-awesome-icon
           icon="expand"/>
       </a>
