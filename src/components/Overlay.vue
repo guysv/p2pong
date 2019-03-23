@@ -75,7 +75,7 @@ export default {
   }
 
   .navbar + div {
-    padding: 16px;
+    padding: 30px 10px;
     margin-top: 30px;
   }
 

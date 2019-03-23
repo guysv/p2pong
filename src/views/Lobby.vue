@@ -1,5 +1,5 @@
 <template>
-  <table id="lobby">
+  <table>
     <thead>
       <tr>
         <th>Host Name</th>
@@ -41,10 +41,12 @@ export default {
 </script>
 
 <style>
-  #lobby {
-    top: 0;
+  table {
+    /* top: 0; */
     width: 100%;
     border-bottom: 1px solid;
   }
+  th {
+    text-align: left
+  }
 </style>
-
