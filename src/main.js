@@ -19,6 +19,7 @@ new Vue({
   router,
   render: h => h(App),
   data: {
-    ipfs: null
+    ipfs: null,
+    rooms: []
   }
 }).$mount('#app')
