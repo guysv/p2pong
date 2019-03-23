@@ -3,13 +3,14 @@
     <thead>
       <tr>
         <th>Host Name</th>
-        <th>Room Name</th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="room in $root.rooms" :key="`${room.host}/${room.id}`">
-        <td>{{ room.hostname }}</td>
-        <td/>
+        <router-link
+          :to="{ name: 'room', params: { host: room.host, id: room.id } }">
+          <td>{{ room.hostname }}</td>
+        </router-link>
       </tr>
     </tbody>
   </table>
@@ -38,6 +39,11 @@ export default {
 
   tr {
     border-left: 2px solid transparent;
+  }
+
+  tr a {
+    color: inherit;
+    text-decoration: inherit;
   }
 
   tbody tr:hover {
