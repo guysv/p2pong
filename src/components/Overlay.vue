@@ -1,8 +1,12 @@
 <template>
-  <div>
+  <div ref="rootElem">
     <div class="navbar">
       <a id="logo">
         <span>P2Pong</span>
+      </a>
+      <a v-on:click.stop="enterFullscreen" id="fullscreen" href="/#/.">
+        <font-awesome-icon
+          icon="expand"/>
       </a>
       <a>
         <font-awesome-icon
@@ -38,6 +42,11 @@ export default {
   name: 'overlay',
   components: {
     LobbyListener
+  },
+  methods: {
+    enterFullscreen () {
+      this.$refs.rootElem.requestFullscreen()
+    }
   },
   mounted () {
     if (this.$root.ipfs) {
@@ -95,7 +104,7 @@ export default {
     float: right;
     display: block;
     text-align: center;
-    padding: 10px 10px 8px 10px;
+    padding: 10px 14px 8px 14px;
     border-bottom: 2px solid transparent;
     text-decoration: none;
     font-size: 17px;
@@ -109,6 +118,12 @@ export default {
 
   .navbar a span {
     padding-left: 8px
+  }
+
+  @media (min-width:660px) {
+    .navbar #fullscreen {
+      display: none;
+    }
   }
 
   @media (max-width:560px) {
