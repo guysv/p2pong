@@ -3,8 +3,15 @@
     <thead>
       <tr>
         <th>Host Name</th>
+        <th>Room Name</th>
       </tr>
     </thead>
+    <tbody>
+      <tr v-for="room in rooms" :key="`${room.host}/${room.id}`">
+        <td>{{ room.hostname }}</td>
+        <td/>
+      </tr>
+    </tbody>
   </table>
 </template>
 
@@ -42,11 +49,22 @@ export default {
 
 <style>
   table {
-    /* top: 0; */
     width: 100%;
-    border-bottom: 1px solid;
-  }
-  th {
+    border-collapse: collapse;
     text-align: left
+  }
+
+  th {
+    padding: 6px 0px;
+    border-bottom: 2px solid;
+    border-left: 10px solid transparent;
+  }
+
+  td {
+    padding: 6px 0px;
+  }
+
+  tbody tr:hover {
+    background: rgba(255, 255, 255, 0.1)
   }
 </style>
