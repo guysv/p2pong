@@ -13,5 +13,10 @@ module.exports = {
   },
   parserOptions: {
     parser: 'babel-eslint'
+  },
+  globals: {
+    APP_VERSION: 'readonly',
+    APP_GIT_REV: 'readonly',
+    APP_GIT_CLEAN: 'readonly'
   }
 }
