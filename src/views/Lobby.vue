@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'lobby',
+  name: 'lobby'
 }
 </script>
 
