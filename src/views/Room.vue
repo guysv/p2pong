@@ -3,18 +3,23 @@
 </template>
 
 <script>
-import { LOBBY_PROTOCOL } from '@/protocol'
+import { LOBBY_PROTOCOL, ROOM_PROTOCOL_PREFIX } from '@/protocol'
 
 export default {
   name: 'room',
   data: () => ({
     isHosting: false,
-    beaconTask: null
+    beaconTask: null,
+    roopTopic: null
   }),
   async mounted () {
+    var roomHost = this.$route.params.host
+    var roomId = this.$route.params.id
+    this.roomTopic = `${ROOM_PROTOCOL_PREFIX}/${roomHost}/${roomId}`
+
     var nodeId = await this.$root.ipfs.id()
 
-    this.isHosting = nodeId.id === this.$route.params.host
+    this.isHosting = nodeId.id === roomHost
 
     if (this.isHosting) {
       // This node hosts the room
