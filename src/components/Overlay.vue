@@ -29,9 +29,9 @@
     </div>
     <div v-else>
       <LobbyListener ref="lobbyListener" />
-      <router-view />
+      <router-view id="page-content"/>
     </div>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -56,7 +56,7 @@ export default {
       config: {
         Addresses: {
           Swarm: [
-            '/dns4/ws-star.discovery.libp2p.io/tcp/443/wss/p2p-websocket-star'
+            // '/dns4/ws-star.discovery.libp2p.io/tcp/443/wss/p2p-websocket-star'
           ]
         }
       },
@@ -84,7 +84,7 @@ export default {
   }
 
   .navbar + div {
-    padding: 30px 10px;
+    padding: 30px 0px;
     margin-top: 30px;
   }
 
@@ -132,5 +132,9 @@ export default {
     .navbar a:not(#logo) span {
       display: none;
     }
+  }
+
+  #page-content {
+    
   }
 </style>

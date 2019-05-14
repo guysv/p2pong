@@ -1,16 +1,20 @@
 <template>
-  <div/>
+  <PongContainer />
 </template>
 
 <script>
+import PongContainer from '@/components/PongContainer'
 import { LOBBY_PROTOCOL, ROOM_PROTOCOL_PREFIX } from '@/protocol'
 
 export default {
   name: 'room',
+  components: {
+    PongContainer
+  },
   data: () => ({
     isHosting: false,
     beaconTask: null,
-    roopTopic: null
+    roomTopic: null
   }),
   async mounted () {
     var roomHost = this.$route.params.host

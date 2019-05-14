@@ -16,16 +16,22 @@ export default {
 </script>
 
 <style>
-body {
-  margin: 0;
-  color: #65e0b7;
-  background-color: #091914;
-  line-height: 1.5;
-}
+  body {
+    margin: 0;
+    color: #65e0b7;
+    background-color: #091914;
+    line-height: 1.5;
+  }
 
-#app {
-  width: 100%;
-  height: 100%;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-}
+  #app {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  }
+
+  .fill-parent {
+    height: 100%;
+  }
 </style>
