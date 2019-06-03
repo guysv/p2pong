@@ -10,7 +10,7 @@ var gitClean = child_process.execSync(`git -C "${__dirname}" status --porcelain`
 module.exports = {
   publicPath: './',
   configureWebpack: config => {
-    config.resolve.alias.ipfs = 'ipfs/dist/index.min.js'
+    // config.resolve.alias.ipfs = 'ipfs/dist/index.min.js'
     config.plugins.push(new webpack.DefinePlugin({
       APP_VERSION: JSON.stringify(appVersion),
       APP_GIT_REV: JSON.stringify(gitRev),
